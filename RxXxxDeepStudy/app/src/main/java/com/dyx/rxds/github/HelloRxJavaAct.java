@@ -128,7 +128,30 @@ public class HelloRxJavaAct extends Activity {
         /**
          * 使用RxJava的Take操作符
          */
-        useTakeOperator();
+        //useTakeOperator();
+        /**
+         * 使用RxJava的TakeLast操作符
+         */
+        useTakeLastOperator();
+    }
+
+    private void useTakeLastOperator() {
+        Observable.just(1, 2, 3, 6, 5, 9).takeLast(2).subscribe(new Subscriber<Integer>() {
+            @Override
+            public void onCompleted() {
+                Logger.d("***onCompleted***");
+            }
+
+            @Override
+            public void onError(Throwable e) {
+                Logger.d("***onError***" + e.getMessage());
+            }
+
+            @Override
+            public void onNext(Integer integer) {
+                Logger.d("***onNext***" + integer);
+            }
+        });
     }
 
     private void useTakeOperator() {
