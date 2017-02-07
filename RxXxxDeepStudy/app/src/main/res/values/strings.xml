@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RxXxxDeepStudy</string>
+    <string name="str_hello_world">使用HelloWorld</string>
 </resources>
